@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WeKlimb - Atlassian Silver Solution Partner providing IT consulting, Agile transformation, and DevOps solutions in Brussels, Belgium.">
+    <meta name="keywords" content="Atlassian, Jira, Confluence, IT Consulting, Agile, DevOps, Brussels">
+    <meta name="author" content="WeKlimb">
+    <title>WeKlimb | Atlassian Solutions & IT Consulting</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #dbeafe;
+            --primary-lighter: #eff6ff;
+            --navy: #1e293b;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-500: #64748b;
+            --gray-700: #334155;
+            --gray-900: #0f172a;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --success: #059669;
+            --ai-gradient-start: #4f46e5;
+            --ai-gradient-end: #7c3aed;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            color: var(--text-primary);
+            padding: 0 40px;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 82px;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        nav .logo img {
+            height: 54px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        nav .logo-text {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--navy);
+            text-transform: lowercase;
+        }
+
+        nav .logo-tagline {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 8px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            display: block;
+            margin-top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav ul a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul a:hover {
+            color: var(--primary);
+        }
+
+        nav ul a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            nav ul { gap: 18px; }
+            nav ul a { font-size: 12px; }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+        }
+
+        /* Hero Section — light gradient */
+        .hero {
+            background: linear-gradient(160deg, var(--primary-lighter) 0%, var(--white) 50%, var(--gray-50) 100%);
+            color: var(--text-primary);
+            padding: 140px 40px 90px;
+            text-align: center;
+            margin-top: 82px;
+        }
+
+        .hero .container { padding: 0 40px; }
+
+        .hero-logo {
+            margin-bottom: 28px;
+        }
+
+        .hero-logo img {
+            height: 160px;
+            width: auto;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+
+        /* Atlassian badge — prominent & centered */
+        .atlassian-badge {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .atlassian-badge img {
+            height: 70px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .atlassian-badge img:hover {
+            transform: scale(1.05);
+        }
+
+        .atlassian-badge-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+            color: var(--navy);
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 28px;
+            color: var(--gray-500);
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 720px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 110px 20px 60px; }
+            .hero-logo img { height: 110px; }
+            .hero h1 { font-size: 34px; }
+            .hero .subtitle { font-size: 17px; }
+            .hero p { font-size: 15px; }
+            .atlassian-badge img { height: 55px; }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 90px 40px;
+        }
+
+        section.alt-bg {
+            background-color: var(--gray-50);
+        }
+
+        section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+        }
+
+        section .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        section .intro-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 20px; }
+            section h2 { font-size: 30px; }
+            section .intro-text { font-size: 15px; margin-bottom: 35px; }
+        }
+
+        /* Service Cards with Icons */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.12);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; gap: 18px; }
+            .service-card { padding: 24px; }
+            .service-card h3 { font-size: 16px; }
+        }
+
+        /* AI Section — soft gradient instead of dark */
+        .ai-section {
+            background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #faf5ff 100%);
+            padding: 90px 40px;
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .ai-section h2 {
+            color: var(--navy);
+        }
+
+        .ai-section .intro-text {
+            color: var(--text-secondary);
+        }
+
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        .ai-feature-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .ai-feature-card:hover {
+            box-shadow: 0 12px 32px rgba(79, 70, 229, 0.12);
+            border-color: var(--ai-gradient-start);
+            transform: translateY(-4px);
+        }
+
+        .ai-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #e0e7ff, #ede9fe);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            color: var(--ai-gradient-start);
+        }
+
+        .ai-feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .ai-feature-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .ai-section { padding: 60px 20px; }
+            .ai-features { grid-template-columns: 1fr; gap: 18px; }
+            .ai-feature-card { padding: 24px; }
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 28px 20px;
+            border-radius: 12px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+
+        .team-member-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            overflow: hidden;
+            border: 3px solid var(--gray-200);
+            transition: border-color 0.3s ease;
+            background-color: #e8e8e8;
+        }
+
+        .team-member:hover .team-member-avatar {
+            border-color: var(--primary);
+        }
+
+        .team-member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) brightness(1.1) contrast(1.05);
+        }
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            color: var(--gray-500);
+            transition: color 0.3s ease;
+        }
+
+        .linkedin-link:hover {
+            color: #0a66c2;
+        }
+
+        .linkedin-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .team-member h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--navy);
+        }
+
+        .team-member .role {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .team-member .certification {
+            font-size: 11px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .team-member { padding: 20px 14px; }
+        }
+
+        /* Clients Section */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 28px;
+        }
+
+        .client-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 36px;
+            transition: all 0.3s ease;
+        }
+
+        .client-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 28px rgba(37, 99, 235, 0.1);
+        }
+
+        .client-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 14px;
+        }
+
+        .client-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid { grid-template-columns: 1fr; }
+            .client-card { padding: 24px; }
+            .client-card h3 { font-size: 19px; }
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--primary-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            color: var(--primary);
+        }
+
+        .contact-item h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--navy);
+        }
+
+        .contact-item p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-dark);
+        }
+
+        .contact-divider {
+            border-top: 1px solid var(--gray-200);
+            padding-top: 28px;
+            margin-top: 28px;
+        }
+
+        .legal-info {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info { gap: 28px; }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 24px 40px;
+            font-size: 13px;
+        }
+
+        footer p { margin: 0; }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+
+        /* Scroll-to-top button */
+        #scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: var(--white);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        #scroll-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        #scroll-to-top.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            #scroll-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#home" class="logo">
+                <img src="https://static.wixstatic.com/media/f60d37_e36db8b585f149c69fd6e9542e685815~mv2_d_2984_3332_s_4_2.png/v1/fill/w_185,h_207,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Color%20logo%20-%20no%20background.png" alt="WeKlimb Logo">
+            </a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#ai-services">AI Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-logo">
+                <img src="https://static.wixstatic.com/media/f60d37_e36db8b585f149c69fd6e9542e685815~mv2_d_2984_3332_s_4_2.png/v1/fill/w_185,h_207,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Color%20logo%20-%20no%20background.png" alt="WeKlimb Logo">
+            </div>
+            <div class="badge">ATLASSIAN SILVER SOLUTION PARTNER</div>
+            <h1>Your Vision. Our Solutions.</h1>
+            <p class="subtitle">Enterprise-Grade IT Consulting & Digital Transformation</p>
+            <p>In today's competitive landscape, IT excellence is non-negotiable. Every second counts when managing complex systems, and missteps can derail your entire operation. WeKlimb bridges the gap between vision and execution. We deliver comprehensive IT services and strategic solutions tailored to your organization's unique challenges — enabling you to drive innovation while we handle the complexity.</p>
+            <a href="#contact" class="cta-button">Get Started Today</a>
+            <div class="atlassian-badge">
+                <img src="https://static.wixstatic.com/media/f60d37_dfc9de6980ed49d38aba02b6ef28681b~mv2.png/v1/fill/w_337,h_112,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Silver%20Solution%20Partner%20clear.png" alt="Atlassian Silver Solution Partner">
+                <span class="atlassian-badge-label">Certified Partner</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="alt-bg">
+        <div class="container">
+            <span class="section-label">What We Offer</span>
+            <h2>Agile IT Solutions for Every Challenge</h2>
+            <p class="intro-text">WeKlimb delivers innovative, results-driven IT solutions built on proven methodologies and deep industry expertise. From Atlassian platform optimization to enterprise-scale DevOps transformation, we customize our approach to align with your strategic objectives.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="puzzle" width="24" height="24"></i>
+                    </div>
+                    <h3>Atlassian Consulting</h3>
+                    <p>Maximize the value of your Atlassian investment through expert design, implementation, and optimization. We architect tailored solutions across Jira, Confluence, and Bitbucket — ensuring your tools amplify productivity and support enterprise-scale operations.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="repeat" width="24" height="24"></i>
+                    </div>
+                    <h3>Agile Transformation</h3>
+                    <p>Navigate the journey from traditional to scaled Agile frameworks with confidence. We establish organizational best practices, streamline workflows, and empower teams to embrace iterative development — unlocking velocity and sustained competitive advantage.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="code-2" width="24" height="24"></i>
+                    </div>
+                    <h3>Software Development</h3>
+                    <p>Build enterprise software that works the way you do. Our architects and developers design, implement, and customize solutions that integrate seamlessly with your existing infrastructure while optimizing for scalability and performance.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="settings" width="24" height="24"></i>
+                    </div>
+                    <h3>Managed Services</h3>
+                    <p>Offload operational overhead to experts. We provide dedicated teams to manage, administer, support, and optimize your enterprise platforms — ensuring continuous availability, security compliance, and peak performance.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="graduation-cap" width="24" height="24"></i>
+                    </div>
+                    <h3>Specialist Training</h3>
+                    <p>Empower your workforce through targeted, hands-on training. Our on-site and online workshops provide teams with practical expertise in Agile methodologies and Atlassian tools — customized to your organizational context and skill levels.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="git-merge" width="24" height="24"></i>
+                    </div>
+                    <h3>DevOps Solutions</h3>
+                    <p>Accelerate time-to-market with intelligent automation and modern tooling. We help IT teams embrace DevOps practices, optimize CI/CD pipelines, and implement infrastructure-as-code — enabling faster, more reliable software delivery at scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Powered SDLC Services Section -->
+    <section id="ai-services" class="ai-section">
+        <div class="container">
+            <span class="section-label">Next-Generation Services</span>
+            <h2>AI-Powered Software Development Lifecycle</h2>
+            <p class="intro-text">The future of software development is intelligent. WeKlimb helps forward-thinking organizations integrate cutting-edge AI capabilities throughout the entire SDLC — from intelligent requirements analysis to predictive deployment insights. Our AI integration services amplify team productivity, enhance code quality, and accelerate time-to-market.</p>
+
+            <div class="ai-features">
+                <div class="ai-feature-card">
+                    <div class="ai-icon">
+                        <i data-lucide="file-code-2" width="24" height="24"></i>
+                    </div>
+                    <h3>AI-Assisted Code Generation & Review</h3>
+                    <p>Leverage intelligent code generation tools to accelerate development while maintaining quality standards. Our AI-powered code review processes catch vulnerabilities, enforce best practices, and reduce technical debt — allowing developers to focus on innovation.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-icon">
+                        <i data-lucide="search-check" width="24" height="24"></i>
+                    </div>
+                    <h3>Intelligent Testing & QA</h3>
+                    <p>Shift testing left with AI-powered test case generation and predictive defect analysis. Intelligent QA automation identifies edge cases and anomalies faster than traditional approaches — improving coverage while reducing testing cycles and costs.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-icon">
+                        <i data-lucide="brain-circuit" width="24" height="24"></i>
+                    </div>
+                    <h3>AI-Driven Project Intelligence</h3>
+                    <p>Make data-informed decisions with AI-powered project analytics. Predictive insights help identify risks early, optimize resource allocation, and improve forecast accuracy — keeping projects on track and stakeholders informed at every stage.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-icon">
+                        <i data-lucide="workflow" width="24" height="24"></i>
+                    </div>
+                    <h3>Intelligent CI/CD Optimization</h3>
+                    <p>Transform your pipeline with AI-driven optimization. Machine learning models predict failure patterns, automatically optimize build configurations, and intelligently manage deployments — dramatically improving reliability and reducing deployment friction.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-icon">
+                        <i data-lucide="file-text" width="24" height="24"></i>
+                    </div>
+                    <h3>Requirements Analysis & Documentation</h3>
+                    <p>Accelerate requirements gathering and documentation generation using advanced NLP. AI-powered analysis clarifies user intent, identifies gaps, and generates comprehensive technical specifications — reducing misalignment and downstream rework.</p>
+                </div>
+
+                <div class="ai-feature-card">
+                    <div class="ai-icon">
+                        <i data-lucide="trending-up" width="24" height="24"></i>
+                    </div>
+                    <h3>Predictive Analytics for Delivery</h3>
+                    <p>Achieve unprecedented delivery precision with predictive analytics. AI models forecast timelines, identify bottlenecks, and recommend optimizations based on historical patterns — enabling you to deliver commitments reliably and build stakeholder confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="alt-bg">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Our People</span>
+                <h2>Meet Our Expert Team</h2>
+                <p class="intro-text" style="margin-left: auto; margin-right: auto;">Comprised of certified architects, experienced engineers, and strategic consultants, our team brings proven expertise across Atlassian technologies, cloud infrastructure, and modern software practices. We're committed to delivering excellence through collaborative partnership and continuous innovation.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://static.wixstatic.com/media/961e09_3a76d420813d4d12b3fe90ca325175a5~mv2.jpg/v1/fill/w_216,h_217,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Bibi.jpg" alt="David Simons">
+                    </div>
+                    <h3>David Simons</h3>
+                    <div class="role">Analyst Developer</div>
+                    <div class="certification">Atlassian Certified Expert</div>
+                    <a href="https://www.linkedin.com/in/david-simons-273898/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://static.wixstatic.com/media/f60d37_d16f3866ce954c4391c71f1fed28a40e~mv2.jpg/v1/crop/x_48,y_0,w_265,h_268/fill/w_209,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_0315_JPG.jpg" alt="Shweta Rajani">
+                    </div>
+                    <h3>Shweta Rajani</h3>
+                    <div class="role">DevOps Engineer</div>
+                    <div class="certification">Atlassian Certified Expert</div>
+                    <a href="https://www.linkedin.com/in/shweta-rajani-483a4b12b/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://static.wixstatic.com/media/f60d37_a50f5241614e40ecb3e55dd6665c7817~mv2.jpeg/v1/fill/w_210,h_217,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1540975720153.jpeg" alt="Julijus Tilvikas">
+                    </div>
+                    <h3>Julijus Tilvikas</h3>
+                    <div class="role">Analyst Developer</div>
+                    <div class="certification">Atlassian Certified Expert</div>
+                    <a href="https://www.linkedin.com/in/julijus-tilvikas-29669953/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://static.wixstatic.com/media/f60d37_ba4fbed229c14025b38d181f1b0d6a1d~mv2.jpg/v1/crop/x_3,y_0,w_494,h_500/fill/w_209,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_0316_JPG.jpg" alt="Michael Cabaraux">
+                    </div>
+                    <h3>Michael Cabaraux</h3>
+                    <div class="role">Architect Developer</div>
+                    <div class="certification">Salesforce.com Certified Expert</div>
+                    <a href="https://www.linkedin.com/in/micha%C3%ABl-cabaraux-8193241/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://static.wixstatic.com/media/f60d37_3f345ea233d94bfdbd58b4cf7037f239~mv2.jpg/v1/crop/x_0,y_0,w_4000,h_4051/fill/w_209,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC06969-2.jpg" alt="Paul Fernandez">
+                    </div>
+                    <h3>Paul Fernandez</h3>
+                    <div class="role">Java Developer</div>
+                    <a href="https://www.linkedin.com/in/paul-fernandez-799507171/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://static.wixstatic.com/media/f60d37_7a7a986358864d8faf58fec6d5286894~mv2_d_1440_1920_s_2.jpg/v1/crop/x_458,y_483,w_270,h_274/fill/w_209,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/PHOTO-2019-11-13-13-40-25.jpg" alt="Neil Ford">
+                    </div>
+                    <h3>Neil Ford</h3>
+                    <div class="role">Business Analyst</div>
+                    <a href="https://www.linkedin.com/in/neil-f-aab364/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://static.wixstatic.com/media/f60d37_f16c578b966b4c168c903bf5db6b349c~mv2.jpg/v1/crop/x_0,y_106,w_2307,h_2488/fill/w_197,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/PXL_20240226_222200843~4.jpg" alt="Tanmay Panigrahi">
+                    </div>
+                    <h3>Tanmay Panigrahi</h3>
+                    <div class="role">Software Engineer</div>
+                    <a href="https://www.linkedin.com/in/tanmay-panigrahi-45606a11a/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://static.wixstatic.com/media/f60d37_827f1e267f7049029ca210c475b50af5~mv2.jpeg/v1/crop/x_3,y_0,w_377,h_382/fill/w_209,h_212,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1517475505147.jpeg" alt="Caroline Wollner">
+                    </div>
+                    <h3>Caroline Wollner</h3>
+                    <div class="role">Executive Assistant</div>
+                    <a href="https://www.linkedin.com/in/caroline-wollner-3895396b/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/954509?v=4" alt="Jonathan Gelin">
+                    </div>
+                    <h3>Jonathan Gelin</h3>
+                    <div class="role">DX Architect</div>
+                    <a href="https://www.linkedin.com/in/jonathan-gelin/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://media.licdn.com/dms/image/v2/C4E03AQEUclITmeU7nA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517711639769?e=1772668800&v=beta&t=v-rHuVLXMhEdyGABR0CLGupfoclaoVIUkMVxgBVNJ3I" alt="Sorin Stroe">
+                    </div>
+                    <h3>Sorin Stroe</h3>
+                    <div class="role">Atlassian Certified Expert</div>
+                    <a href="https://www.linkedin.com/in/sosodotro/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEkCoMP7dr-Nw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1715085885546?e=1772668800&v=beta&t=mzIoaPh7y3PykusVuNG78FvrvQrviVbQqphQV7w8p0M" alt="Kamil Beer">
+                    </div>
+                    <h3>Kamil Beer</h3>
+                    <div class="role">Senior Atlassian Specialist</div>
+                    <div class="certification">Atlassian Certified Expert</div>
+                    <a href="https://www.linkedin.com/in/kamilbeer/" target="_blank" rel="noopener" class="linkedin-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Portfolio of Clients</span>
+                <h2>Success-Driven Partnerships</h2>
+                <p class="intro-text" style="margin-left: auto; margin-right: auto;">We've earned the trust of leading global organizations by consistently delivering strategic IT solutions that drive measurable results. Our partnerships are built on expertise, reliability, and a deep commitment to our clients' success.</p>
+            </div>
+
+            <div class="clients-grid">
+                <div class="client-card">
+                    <h3>SWIFT</h3>
+                    <p>SWIFT has confidently partnered with WeKlimb members for critical IT needs across multiple years. WeKlimb's proven expertise ensures SWIFT remains ahead of the technology curve, leveraging best-in-class platforms and practices to support their global mission.</p>
+                </div>
+
+                <div class="client-card">
+                    <h3>Proximus</h3>
+                    <p>WeKlimb designed and implemented strategic solutions for Proximus that fundamentally enhanced operational flexibility and employee productivity. Through thoughtful architecture and collaborative implementation, we enabled Proximus teams to work with unprecedented efficiency and agility.</p>
+                </div>
+
+                <div class="client-card">
+                    <h3>MLOZ</h3>
+                    <p>WeKlimb provides dedicated Atlassian expertise to MLOZ, supporting their teams with strategic platform consulting, configuration, and optimization across the Atlassian ecosystem. From Jira workflow design to Confluence knowledge management, we help MLOZ harness the full potential of their Atlassian toolset to streamline operations and drive cross-team collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="alt-bg">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">Contact Us</span>
+                <h2>Get In Touch</h2>
+                <p class="intro-text" style="margin-left: auto; margin-right: auto;">Ready to transform your IT operations? Our team is here to discuss your challenges, explore solutions, and partner with you on the path to digital excellence.</p>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i data-lucide="map-pin" width="20" height="20"></i>
+                    </div>
+                    <h3>Address</h3>
+                    <p>31 rue Alfred Giron<br>1050 Ixelles<br>Brussels, Belgium</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i data-lucide="mail" width="20" height="20"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@weklimb.com">info@weklimb.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i data-lucide="phone" width="20" height="20"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+32477959030">+32 477 95 90 30</a></p>
+                </div>
+            </div>
+
+            <div class="contact-divider">
+                <div class="legal-info">
+                    <strong>WeKlimb</strong> is part of DSI Consulting sprl<br>
+                    Enterprise Number: BE 0877.456.456
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 WeKlimb. All rights reserved. Atlassian Silver Solution Partner.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top">&uarr;</button>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Scroll-to-top button
+        const scrollButton = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('show');
+            } else {
+                scrollButton.classList.remove('show');
+            }
+        });
+
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
