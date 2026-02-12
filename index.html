@@ -85,14 +85,20 @@
         }
 
         nav .logo img {
-            height: 54px;
+            height: 72px;
             width: auto;
             transition: opacity 0.3s ease;
         }
 
+        nav .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
         nav .logo-text {
             font-family: 'Nunito Sans', sans-serif;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 300;
             letter-spacing: 3px;
             color: var(--navy);
@@ -101,13 +107,13 @@
 
         nav .logo-tagline {
             font-family: 'Nunito Sans', sans-serif;
-            font-size: 8px;
+            font-size: 10px;
             font-weight: 300;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--text-secondary);
             display: block;
-            margin-top: 0;
+            margin-top: 2px;
         }
 
         nav ul {
@@ -671,7 +677,10 @@
     <nav>
         <div class="container">
             <a href="#home" class="logo">
-                <img src="https://static.wixstatic.com/media/f60d37_e36db8b585f149c69fd6e9542e685815~mv2_d_2984_3332_s_4_2.png/v1/fill/w_185,h_207,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Color%20logo%20-%20no%20background.png" alt="WeKlimb Logo">
+                <div class="logo-text-group">
+                    <span class="logo-text">weklimb</span>
+                    <span class="logo-tagline">smarter it</span>
+                </div>
             </a>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -690,7 +699,6 @@
             <div class="hero-logo">
                 <img src="https://static.wixstatic.com/media/f60d37_e36db8b585f149c69fd6e9542e685815~mv2_d_2984_3332_s_4_2.png/v1/fill/w_185,h_207,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Color%20logo%20-%20no%20background.png" alt="WeKlimb Logo">
             </div>
-            <div class="badge">ATLASSIAN SILVER SOLUTION PARTNER</div>
             <h1>Your Vision. Our Solutions.</h1>
             <p class="subtitle">Enterprise-Grade IT Consulting & Digital Transformation</p>
             <p>In today's competitive landscape, IT excellence is non-negotiable. Every second counts when managing complex systems, and missteps can derail your entire operation. WeKlimb bridges the gap between vision and execution. We deliver comprehensive IT services and strategic solutions tailored to your organization's unique challenges — enabling you to drive innovation while we handle the complexity.</p>
